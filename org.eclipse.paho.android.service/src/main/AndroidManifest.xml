@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+  <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+  <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+  <application>
+    <receiver android:name=".MqttAndroidClient" android:exported="false">
+      <intent-filter>
+        <action android:name="APP_SPECIFIC_BROADCAST" />
+      </intent-filter>
+    </receiver>
+    <service android:name="org.eclipse.paho.android.service.MqttService" />
+  </application>
+</manifest>
